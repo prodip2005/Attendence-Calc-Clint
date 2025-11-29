@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* --- Updated Logo/Brand CSS --- */
+
+.animated-brand-logo {
+    /* Large, bold text for a brand name */
+    font-size: 1.75rem; /* Equivalent to text-2xl or larger */
+    font-weight: 800; /* Extra bold */
+    text-decoration: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    line-height: 1; /* Keep text centered vertically */
+    
+    /* 1. Text Gradient Effect */
+    background: linear-gradient(90deg, #10B981, #3B82F6, #EC4899); /* Emerald, Blue, Pink */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* 2. Animation Setup */
+    background-size: 300% 100%; /* Make the gradient wider than the text */
+    animation: gradientShift 8s ease infinite; /* Slow, repeating animation */
+    transition: transform 0.2s ease-out; /* For subtle hover effect */
+}
+
+/* 3. The Breathing/Shifting Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%; /* Shift the gradient color across the text */
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 4. Subtle Interactive Hover Effect */
+.animated-brand-logo:hover {
+    transform: scale(1.03); /* Text grows slightly */
+}
+
+
+/* --- Re-Apply the stylish menu link CSS from before --- */
+
+.navbar a {
+    color: #4B5563;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #3B82F6;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar a:hover {
+    color: #1F2937;
+}
+
+.navbar a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: #10B981;
+}
+
+.navbar a.active {
+    color: #10B981;
+}
+
+
+

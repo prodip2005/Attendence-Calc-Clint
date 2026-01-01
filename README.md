@@ -49,12 +49,13 @@
 
 <h3>⚙️ Backend & Database</h3>
 <p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb" />
+  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,firebase" />
 </p>
 <ul>
   <li><b>Runtime:</b> Node.js</li>
   <li><b>Framework:</b> Express.js</li>
   <li><b>Database:</b> MongoDB (NoSQL)</li>
+  <li><b>Database:</b> Firebase (Login/Logout)</li>
 </ul>
 
 ---
